@@ -19,7 +19,7 @@ public class EmployeeTest {
         Employee emp2 = new Employee("Ann Banana", "ab@gmail.com");
         Employee emp3 = new Employee("Tom Thumb", "tt@gmail.com");
         
-        // Declare an array and load those 3 objects into it
+        // Declare an array projectGroup and load those 3 objects into it
         Employee[] projectGroup = new Employee[3];
         
         projectGroup[0] = emp1;
@@ -40,42 +40,55 @@ public class EmployeeTest {
         }
         
         
-//        // Everything below is just for testing
-//        
-//        Employee empTest = new Employee();
-//        Employee empTest2 = new Employee("Karl", "kone@123.ie");
-//        
-//        // Displaying employee information
-//        System.out.println("Employee default: " + empTest.getName() + ", Email: " + empTest.getEmail() + ", Employee Number: " + empTest.getEmpNum());
-//        System.out.println("Employee Karl: " + empTest2.getName() + ", Email: " + empTest2.getEmail() + ", Employee Number: " + empTest2.getEmpNum());
-//        
-//        // Testing setEmail method
-//        // Should set email
-//        empTest.setEmail("username@domain.com");
-//        System.out.println("Employee pass New Email: " + empTest.getEmail());
-//        empTest.setEmail("user.name@domain.com");
-//        System.out.println("Employee pass New Email: " + empTest.getEmail());
-//        empTest.setEmail("user-name@domain.com");
-//        System.out.println("Employee pass New Email: " + empTest.getEmail());
-//        empTest.setEmail("username@domain.co.in");
-//        System.out.println("Employee pass New Email: " + empTest.getEmail());
-//        empTest.setEmail("user_name@domain.com");
-//        System.out.println("Employee pass New Email: " + empTest.getEmail());
-//        
-//        // Should not set email
-//        empTest2.setEmail("ab");
-//        System.out.println("Employee fail New Email: " + empTest2.getEmail());
-//        empTest2.setEmail("username.@domain.com");
-//        System.out.println("Employee fail New Email: " + empTest2.getEmail());
-//        empTest2.setEmail(".user.name@domain.com");
-//        System.out.println("Employee fail New Email: " + empTest2.getEmail());
-//        empTest2.setEmail("user-name@domain.com.");
-//        System.out.println("Employee fail New Email: " + empTest2.getEmail());
-//        empTest2.setEmail("username@.com");
-//        System.out.println("Employee fail New Email: " + empTest2.getEmail());
-//
-//        // Testing getNextEmpNum method
-//        System.out.println("Next Employee Number: " + Employee.getNextEmpNum());
+        // Everything below is just for testing
+        
+        Employee empTest = new Employee();
+        Employee empTest2 = new Employee("Karl", "kone@123.ie");
+        Company comp = new Company();
+        
+        // Displaying employee information
+        System.out.println("Employee default: " + empTest.getName() + ", Email: " + empTest.getEmail() + ", Employee Number: " + empTest.getEmpNum());
+        System.out.println("Employee Karl: " + empTest2.getName() + ", Email: " + empTest2.getEmail() + ", Employee Number: " + empTest2.getEmpNum());
+        
+        // Testing setEmail method and email validation
+        // Should set email
+        empTest.setEmail("username@domain.com");
+        System.out.println("Employee pass New Email: " + empTest.getEmail());
+        empTest.setEmail("user.name@domain.com");
+        System.out.println("Employee pass New Email: " + empTest.getEmail());
+        empTest.setEmail("user-name@domain.com");
+        System.out.println("Employee pass New Email: " + empTest.getEmail());
+        empTest.setEmail("username@domain.co.in");
+        System.out.println("Employee pass New Email: " + empTest.getEmail());
+        empTest.setEmail("user_name@domain.com");
+        System.out.println("Employee pass New Email: " + empTest.getEmail());
+        
+        // Should not set email
+        empTest2.setEmail("ab");
+        System.out.println("Employee fail New Email: " + empTest2.getEmail());
+        empTest2.setEmail("username.@domain.com");
+        System.out.println("Employee fail New Email: " + empTest2.getEmail());
+        empTest2.setEmail(".user.name@domain.com");
+        System.out.println("Employee fail New Email: " + empTest2.getEmail());
+        empTest2.setEmail("user-name@domain.com.");
+        System.out.println("Employee fail New Email: " + empTest2.getEmail());
+        empTest2.setEmail("username@.com");
+        System.out.println("Employee fail New Email: " + empTest2.getEmail());
+
+        // Testing getNextEmpNum method
+        System.out.println("Next Employee Number: " + Employee.getNextEmpNum());
+
+
+        // Populating ArrayList<Employee> named 'staff' in Company class
+        comp.addNewStaff(emp1);
+        comp.addNewStaff(emp2);
+        comp.addNewStaff(emp3);
+        
+        // Testing listEmployees method
+        comp.listEmployees(1);
+        
+        // Testing getStaffNumber method
+        System.out.println("The number of employees in arrayList : " + comp.getStaffNumber());
     }
     
 }

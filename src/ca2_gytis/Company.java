@@ -28,6 +28,11 @@ public class Company {
         this.companyName = companyName;
         this.staff = new ArrayList<>();
     }
+
+    // Accessor method for Company name
+    public String getCompanyName() {
+        return companyName;
+    }
     
     // Method addNewStaff() adds a new employee to the staff arrayList (the employee is a parameter)
     public void addNewStaff(Employee employee){
@@ -39,13 +44,20 @@ public class Company {
         return staff.size();
     }
     
-    // Method listEmployees() uses an iterator object to find in the arrayList all employees above a given employee number value 
-    // (this value is a parameter for this method) and prints the names of these employees
+    /* Method listEmployees() uses an iterator object to find in the arrayList all employees above a given employee number value 
+    (this value is a parameter for this method) and prints the names of these employees */
     public void listEmployees(int givenEmpNum){
         for (Employee emp : staff){
             if (emp.getEmpNum() > givenEmpNum){
                 System.out.println("Employee with a employee number greater than " + givenEmpNum + " is: " + emp.getName());
             }
+        }
+    }
+    
+    // Method for listing all employees for a manager
+    public void listAllEmployees() {
+        for (Employee emp : staff){
+            System.out.println("Employee number: " + emp.getEmpNum() + ", Name: " + emp.getName() + ", Email: " + emp.getEmail());
         }
     }
 }

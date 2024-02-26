@@ -9,16 +9,18 @@ package ca2_gytis;
  * @author Gytis
  */
 
-// Part 1, A. Write the complete class, Employee, which has the following fields and methods
+// Part 1, A. Write the complete class, Employee
 public class Employee {
     
     private String name;
     private String email;
+    private String username;
+    private String password;
     private int empNum;
     
-    // Static field nextEmpNum of type int and initialized to 1, 
-    // which initialises empNum in the constructor.
-    // Its value then is incremented to give consecutive numbers to each newly created object
+    /* Static field nextEmpNum of type int and initialized to 1, 
+    which initialises empNum in the constructor.
+    Its value then is incremented to give consecutive numbers to each newly created object*/
     private static int nextEmpNum = 1;
 
     // Constructor with default values
@@ -36,6 +38,38 @@ public class Employee {
         this.empNum = nextEmpNum;
         nextEmpNum++;
     }
+    
+    /* Part 2, B. A particular employee has been designated a “manager”. 
+    They are considered as a regular employee for all purposes, 
+    except that they also have a “username” and a “password” as fields, with corresponding getters and setters. */
+    public Employee(String name, String email, String username, String password) {
+        this.name = name;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.empNum = nextEmpNum;
+        nextEmpNum++;
+    }    
+
+    // Accessor method for username
+    public String getUsername() {
+        return username;
+    }
+
+//    // Setter for username
+//    public void setUsername(String username) {
+//        this.username = "Gnomeo";  // ????????????????????????????????????
+//    }
+
+    // Accessor method for password
+    public String getPassword() {
+        return password;
+    }
+
+//    // Setter for password
+//    public void setPassword(String password) {
+//        this.password = "smurf";  // ????????????????????????????????????
+//    }
     
     // Accessor method for name
     public String getName(){

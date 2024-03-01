@@ -34,9 +34,10 @@ public class Company {
         return companyName;
     }
     
-    // Method addNewStaff() adds a new employee to the staff arrayList (the employee is a parameter)
+    // Method addNewStaff() adds a new employee to the staff arrayList (the employee is a parameter)    
     public void addNewStaff(Employee employee){
         staff.add(employee);
+        System.out.println("Employee added.");
     }
     
     // Accessor method getStaffNumber() returns the number of employees currently in the arrayList
@@ -54,10 +55,22 @@ public class Company {
         }
     }
     
-    // Method for listing all employees for a manager
-    public void listAllEmployees() {
-        for (Employee emp : staff){
-            System.out.println("Employee number: " + emp.getEmpNum() + ", Name: " + emp.getName() + ", Email: " + emp.getEmail());
+    // Part 2. Challenges 
+    /* Create a method in the Company class called removeStaff() that removes
+    an employee from the staff arrayList (the employee’s empNum is a parameter) */
+    public void removeStaff(int empNum){
+        for (int i = 0; i < getStaffNumber(); i++){
+            if (staff.get(i).getEmpNum() == empNum) {
+                staff.remove(i);
+                System.out.println("Employee removed.");
+            }
         }
     }
+    
+//    // Method for listing all employees for a manager JUST FOR TESTING
+//    public void listAllEmployees() {
+//        for (Employee emp : staff){
+//            System.out.println("Employee number: " + emp.getEmpNum() + ", Name: " + emp.getName() + ", Email: " + emp.getEmail());
+//        }
+//    }
 }

@@ -56,24 +56,28 @@ public class Employee {
         return username;
     }
 
-//    // Setter for username
-//    public void setUsername(String username) {
-//        this.username = "Gnomeo";  // ????????????????????????????????????
-//    }
+    // Setter for username
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     // Accessor method for password
     public String getPassword() {
         return password;
     }
 
-//    // Setter for password
-//    public void setPassword(String password) {
-//        this.password = "smurf";  // ????????????????????????????????????
-//    }
+    // Setter for password
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
     // Accessor method for name
     public String getName(){
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
     // Accessor method for email

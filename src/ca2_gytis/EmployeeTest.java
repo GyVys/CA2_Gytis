@@ -84,6 +84,7 @@ public class EmployeeTest {
                     
                     case "1": 
                             System.out.println("Here is a list of staff:\n");
+//                            comp.listAllEmployees();  // JUST FOR TESTING PURPOSE
                             comp.listEmployees(0);
                         break;
                         

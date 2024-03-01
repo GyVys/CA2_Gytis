@@ -4,6 +4,7 @@
  */
 package ca2_gytis;
 
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -118,8 +119,22 @@ public class EmployeeTest {
             System.out.println("Error: wrong username or password!");
         }
         
+        // Bonus challenge:
+        // Create a HashSet called staffSet that will not allow two employees with the same empNum to be elements
+        HashSet<Employee> staffSet = new HashSet<>();
         
-//        //Everything below is just for TESTING
+//        // Add employees to the HashSet() JUST FOR TESTING PURPOSE
+//        staffSet.add(emp1);
+//        staffSet.add(emp3);
+//        staffSet.add(emp1);
+//        
+//        // and check if there are no two employees with same empNum JUST FOR TESTING PURPOSE
+//        for (Employee emp : staffSet){
+//            System.out.println("Employee number: " + emp.getEmpNum() + ", Name: " + emp.getName() + ", Email: " + emp.getEmail());
+//        }
+        
+        
+//        //Everything below is JUST FOR TESTING
         
 //        comp.listAllEmployees();
 //        

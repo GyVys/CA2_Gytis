@@ -15,6 +15,10 @@ import java.util.Scanner;
 // Part 1, B. Create EmployeeTest class containing main method
 public class EmployeeTest {
     
+    /* Link to the Github repo
+    https://github.com/GyVys/CA2_Gytis
+    */
+    
     public static void main(String[] args) {
         
         // Create 3 Employee objects

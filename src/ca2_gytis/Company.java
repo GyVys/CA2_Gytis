@@ -19,7 +19,7 @@ public class Company {
     
     // The default constructor for this class which initialises all fields
     public Company() {
-        this.companyName = "Just a Company";
+        this.companyName = "Default Company";
         this.staff = new ArrayList<>();
     }
     

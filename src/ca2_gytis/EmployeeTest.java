@@ -97,8 +97,14 @@ public class EmployeeTest {
                             String nameNew = input.nextLine();
                             System.out.println("Enter new employee's Email: ");                            
                             String emailNew = input.nextLine();
-                            Employee empNew = new Employee(nameNew, emailNew);
-                            comp.addNewStaff(empNew);
+                            
+                            if (Employee.emailValidation(emailNew)) {
+                                Employee empNew = new Employee(nameNew, emailNew);
+                                comp.addNewStaff(empNew);
+                            }
+                            else {
+                                System.out.println("Error: not valid email, new employee not added!");
+                            }
                         break;
                         
                     // Allow the manager to remove employees from the menu

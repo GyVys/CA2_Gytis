@@ -4,6 +4,8 @@
  */
 package ca2_gytis;
 
+import java.util.regex.Pattern;
+
 /**
  *
  * @author Gytis
@@ -25,7 +27,7 @@ public class Employee {
 
     // Constructor with default values
     public Employee() {
-        this.name = "John";
+        this.name = "John Doe";
         this.email = "jdoe@123.ie";
         this.empNum = nextEmpNum;
         nextEmpNum++;
@@ -97,15 +99,22 @@ public class Employee {
         if (!(email.length() > 3)){
             System.out.println("Error: email address must be longer than 3 characters!");
         }
-        
-        // Challenge accepted:
-        // Checking a strict validation of email address with regex
-        else if (!(email.matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"))){
+                
+        else if (!(emailValidation(email))){
             System.out.println("Error: enter a valid email address!");
         }
         else {
             this.email = email;
-        }        
+        }
+    }
+    
+    public static boolean emailValidation(String email){
+        
+        // Challenge accepted:
+        // Checking a strict validation of email address with regex
+        String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+       
+        return Pattern.matches(regex, email);
     }
     
     // Method to return the current value of nextEmpNum
